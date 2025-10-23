@@ -1,0 +1,45 @@
+﻿@model StudentManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="StudentId" />
+
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Birth Date</label>
+        <input asp-for="BirthDate" type="date" class="form-control" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Address</label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>School Name</label>
+        <input asp-for="SchoolName" class="form-control" />
+        <span asp-validation-for="SchoolName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Percentage</label>
+        <input asp-for="Percentage" class="form-control" />
+        <span asp-validation-for="Percentage" class="text-danger"></span>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
