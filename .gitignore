@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+======
+# Visual Studio
+.vs/
+>>>>>>> 67814cf95cd3aefe28b3bf38b12ed8f9859cdec3
 bin/
 obj/
 *.user
 *.suo
-*.db
+*.nupkg
 *.log
-.vs/
+packages/

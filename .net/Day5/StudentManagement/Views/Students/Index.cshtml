@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StudentManagement.Models.Student>
+
+<h2>Student List</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Birth Date</th>
+            <th>Address</th>
+            <th>School</th>
+            <th>Percentage</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.StudentId</td>
+            <td>@s.Name</td>
+            <td>@s.BirthDate.ToShortDateString()</td>
+            <td>@s.Address</td>
+            <td>@s.SchoolName</td>
+            <td>@s.Percentage</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = s.StudentId })">Edit</a> |
+                <a href="@Url.Action("Details", new { id = s.StudentId })">Details</a> |
+                <a href="@Url.Action("Delete", new { id = s.StudentId })">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
